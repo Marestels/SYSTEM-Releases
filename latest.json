@@ -1,0 +1,9 @@
+{
+  "version_name": "0.3.0",
+  "version_code": 3,
+  "minimum_supported_version_code": 3,
+  "apk_url": "https://github.com/Marestels/SYSTEM-Releases/releases/download/v0.3.0/SYSTEM-0.3.0.apk",
+  "sha256": "d6eb64ae9f5a7156f4023c631a91b1593b6aca1b00e74b7638cf4a94cc53154d",
+  "download_size_bytes": 54456025,
+  "release_notes": "Built-in self-update foundation and GitHub Releases distribution."
+}
