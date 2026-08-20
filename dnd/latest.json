@@ -1,0 +1,9 @@
+{
+  "version_name": "0.1.7",
+  "version_code": 17,
+  "minimum_supported_version_code": 15,
+  "apk_url": "https://ufsrhzhyowettghttcuu.supabase.co/functions/v1/dnd-apk?v=0.1.7",
+  "sha256": "d281ea81e5afe2bc3119fa49d99fef0f0f510b8babf1592004ca9b1413f5a2c3",
+  "download_size_bytes": 16123,
+  "release_notes": "Облачное лобби активно: создание комнат, роли Игрок / ГМ / Наблюдатель, очередь хода, броски кубов, общие листы персонажей и поле."
+}
