@@ -1,9 +1,9 @@
 {
-  "version_name": "0.1.8",
-  "version_code": 18,
+  "version_name": "0.2.0",
+  "version_code": 20,
   "minimum_supported_version_code": 15,
-  "apk_url": "https://ufsrhzhyowettghttcuu.supabase.co/functions/v1/dnd-apk?v=0.1.8",
-  "sha256": "29a2b0f55c34f019280f5653fa3b6fce7163e401806f99296cea9581665e60c8",
-  "download_size_bytes": 54367,
-  "release_notes": "Исправлен вылет при запуске облачной версии. Возвращена стабильная Android Activity, сохранено облачное лобби и добавлена собственная иконка D&D для ярлыка приложения."
+  "apk_url": "https://ufsrhzhyowettghttcuu.supabase.co/functions/v1/dnd-apk?v=0.2.0",
+  "sha256": "7a7f132522ab206eaadf70b951bde7a10f10a99a350d54da97a35ca98c111929",
+  "download_size_bytes": 55884,
+  "release_notes": "Добавлено удаление комнат для ГМ, исправлен сброс клавиатуры и текста при редактировании, улучшены листы персонажей и история бросков перенесена в компактное поле под картой."
 }
