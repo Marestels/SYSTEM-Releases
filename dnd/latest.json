@@ -1,7 +1,9 @@
 {
-  "version_name": "0.3.0",
-  "version_code": 30,
+  "version_name": "0.3.2",
+  "version_code": 32,
   "minimum_supported_version_code": 15,
-  "apk_url": "https://ufsrhzhyowettghttcuu.supabase.co/functions/v1/dnd-apk?v=0.3.0",
-  "release_notes": "Исправлено удаление комнат. Добавлен выбор формата листа персонажа: ручное заполнение по структуре D&D 5.5e либо загрузка скриншота/PDF. Расширены поля ручного листа, добавлено облачное хранение файлов персонажей."
+  "apk_url": "https://ufsrhzhyowettghttcuu.supabase.co/functions/v1/dnd-apk?v=0.3.2",
+  "sha256": "169844fff6b1187ea625af88b94b9a8ea9e0c812cc3429feb44127302ada18a8",
+  "download_size_bytes": 58235,
+  "release_notes": "Исправлена ошибка «Не удалось обработать пакет» при установке обновления. APK пересобран на проверенной сборочной базе, добавлена строгая проверка целостности обновления. Сохранены удаление комнат и новые листы персонажей: ручной формат D&D 5.5e, скриншот или PDF."
 }
