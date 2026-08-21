@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>D&amp;D Session Table — загрузка листа</title>
+  <style type="text/css">
+    html,body{margin:0;min-height:100%;background:#08111e;color:#eef4ff;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box}
+    .card{width:min(100%,560px);background:#111d31;border:1px solid #2a4775;border-radius:22px;padding:22px;box-sizing:border-box;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+    h1{font-size:24px;margin:0 0 10px} p{color:#9eb2d4;line-height:1.5;margin:8px 0 14px}
+    .picker{display:block;width:100%;box-sizing:border-box;background:#081322;border:1px solid #355684;border-radius:14px;padding:15px;color:#fff;margin:14px 0}
+    button{width:100%;border:0;border-radius:14px;padding:15px 16px;font:inherit;font-weight:850;color:#fff;background:linear-gradient(135deg,#4d8cff,#6d6cff)}
+    button:disabled{opacity:.55}.small{font-size:12px;color:#7f96bf}.ok{color:#66dfa0}.bad{color:#ff8e98}.status{margin-top:14px;padding:12px;border-radius:12px;background:#0a1627;display:none;white-space:pre-wrap}.status.show{display:block}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>📄 Загрузка листа персонажа</h1>
+    <p>Выберите скриншот листа или PDF. Поддерживаются PNG, JPG, WEBP и PDF до 20 МБ.</p>
+    <form id="form">
+      <input id="sheet" class="picker" type="file" name="sheet" accept="image/png,image/jpeg,image/webp,application/pdf" required="required" />
+      <button id="send" type="submit">Загрузить лист</button>
+    </form>
+    <div id="status" class="status"></div>
+    <p class="small">После успешной загрузки вернитесь в D&amp;D Session Table — лист обновится автоматически.</p>
+  </div>
+<script type="application/javascript"><![CDATA[
+(function(){
+  var API='https://ufsrhzhyowettghttcuu.supabase.co/functions/v1/dnd-sheet-upload';
+  var qs=new URLSearchParams(window.location.search);
+  var id=(qs.get('character_id')||'').trim();
+  var form=document.getElementById('form');
+  var file=document.getElementById('sheet');
+  var send=document.getElementById('send');
+  var status=document.getElementById('status');
+  function show(text,kind){status.className='status show '+(kind||'');status.textContent=text;}
+  if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)){
+    show('Неверная ссылка на персонажа. Вернитесь в приложение и откройте загрузку ещё раз.','bad');
+    form.style.display='none';
+    return;
+  }
+  form.addEventListener('submit',async function(ev){
+    ev.preventDefault();
+    if(!file.files||!file.files.length){show('Сначала выберите файл.','bad');return;}
+    var f=file.files[0];
+    if(f.size>20*1024*1024){show('Файл больше 20 МБ.','bad');return;}
+    send.disabled=true; send.textContent='Загрузка…'; show('Отправляем файл…','');
+    try{
+      var data=new FormData(); data.append('character_id',id); data.append('sheet',f,f.name);
+      var r=await fetch(API,{method:'POST',body:data,mode:'cors'});
+      var body=await r.json().catch(function(){return null;});
+      if(!r.ok||!body||!body.ok) throw new Error((body&&body.error)||('HTTP '+r.status));
+      show('✓ Лист загружен. Можно вернуться в приложение.','ok');
+      send.textContent='Загружено';
+    }catch(e){
+      show('Не удалось загрузить файл: '+(e&&e.message?e.message:String(e)),'bad');
+      send.disabled=false; send.textContent='Повторить загрузку';
+    }
+  });
+})();
+]]></script>
+</body>
+</html>
