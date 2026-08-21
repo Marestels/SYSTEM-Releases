@@ -1,9 +1,7 @@
 {
-  "version_name": "0.2.0",
-  "version_code": 20,
+  "version_name": "0.3.0",
+  "version_code": 30,
   "minimum_supported_version_code": 15,
-  "apk_url": "https://ufsrhzhyowettghttcuu.supabase.co/functions/v1/dnd-apk?v=0.2.0",
-  "sha256": "7a7f132522ab206eaadf70b951bde7a10f10a99a350d54da97a35ca98c111929",
-  "download_size_bytes": 55884,
-  "release_notes": "Добавлено удаление комнат для ГМ, исправлен сброс клавиатуры и текста при редактировании, улучшены листы персонажей и история бросков перенесена в компактное поле под картой."
+  "apk_url": "https://ufsrhzhyowettghttcuu.supabase.co/functions/v1/dnd-apk?v=0.3.0",
+  "release_notes": "Исправлено удаление комнат. Добавлен выбор формата листа персонажа: ручное заполнение по структуре D&D 5.5e либо загрузка скриншота/PDF. Расширены поля ручного листа, добавлено облачное хранение файлов персонажей."
 }
