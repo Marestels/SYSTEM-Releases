@@ -1,5 +1,6 @@
-# SYSTEM Releases
+# Marshrut Updates
 
-Public binary distribution repository for the SYSTEM Android application.
+Отдельная ветка распространения обновлений приложения «Маршрут».
 
-This repository contains release metadata and packaged APK files only. Application source code is maintained separately.
+Файл `latest.json` содержит сведения о текущем APK, его SHA-256 и версии.
+Этот канал не является релизом приложения SYSTEM; основная ветка и существующие релизы SYSTEM не изменяются.

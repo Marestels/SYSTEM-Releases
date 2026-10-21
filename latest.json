@@ -1,9 +1,9 @@
 {
-  "version_name": "0.10.3",
-  "version_code": 13,
-  "minimum_supported_version_code": 9,
-  "apk_url": "https://github.com/Marestels/SYSTEM-Releases/releases/download/v0.10.3/SYSTEM-0.10.3.apk",
-  "sha256": "7cd6f5741b964ac5fccff7416e8ade7ddd94789f44cc4c0bd78c5bf60e82336c",
-  "download_size_bytes": 59103915,
-  "release_notes": "SYSTEM update."
+  "packageName": "com.marestels.marshrut",
+  "versionName": "1.0.2",
+  "versionCode": 3,
+  "apkUrl": "https://raw.githubusercontent.com/Marestels/SYSTEM-Releases/marshrut-updates/Marshrut-1.0.2.apk",
+  "sha256": "b9212a31e7258c5b07cdec8a5bfa290ff96d4b9b4b788a8b750a0c6b8c57c925",
+  "size": 1700103,
+  "notes": "Подключены автоматические обновления «Маршрут»."
 }
